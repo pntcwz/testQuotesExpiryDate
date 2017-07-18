@@ -1,0 +1,21 @@
+{
+  "/test": {
+    "target": "http://localhost:8114",
+    "secure": false
+  },
+
+  "/api": {
+    "target": "http://localhost:8114",
+    "secure": false
+  },
+
+  "/userauth": {
+    "target": "http://localhost:8114",
+    "secure": false
+  },
+
+  "/admin": {
+    "target": "http://localhost:8114",
+    "secure": false
+  }
+}

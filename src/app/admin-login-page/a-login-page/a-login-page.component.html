@@ -1,0 +1,35 @@
+<!-- container -->
+<div id="container" layout="row" layout-padding>
+  <!-- 登入 -->
+  <div layout="column" flex layout-align="start none" md-theme="login" class="md-warn">
+
+    <form [formGroup]="form" (ngSubmit)="onSubmit(f)" #f="ngForm" layout="column" layout-align="start center" layout-margin>
+      <h3 class="md-headline">管理者登入</h3>
+      <div class="md-accent">
+        <label>帳號</label>
+        <input mdInput type="text" formControlName="username"  required />
+      </div>
+      <div class="md-accent">
+        <label>密碼</label>
+        <input mdInput type="password" formControlName="password"  required />
+      </div>
+      <button md-button type="submit" class="md-raised md-warn">登入</button>
+            <pre> data = {{ data | json }}
+form.value = {{form['value'] | json}}</pre>
+    </form>
+
+    <!--<form ng-submit="adminloginCtrl.submit()" method="post" layout="column" layout-align="start center" layout-margin>
+      <h3 class="md-headline">管理者登入</h3>
+      <md-input-container class="md-accent">
+        <label>帳號</label>
+        <input mdInput type="text" ng-model="adminloginCtrl.user.username" name="username" required />
+      </md-input-container>
+      <md-input-container class="md-accent">
+        <label>密碼</label>
+        <input mdInput type="password" ng-model="adminloginCtrl.user.password" name="password" required />
+      </md-input-container>
+      <button md-button type="submit" class="md-raised md-warn">登入</button>
+    </form>-->
+  </div>
+</div>
+<router-outlet></router-outlet>

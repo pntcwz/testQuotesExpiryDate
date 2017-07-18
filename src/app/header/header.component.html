@@ -1,0 +1,29 @@
+
+
+
+<!-- Logout Header -->
+<md-toolbar id="headerBar" class="toolbar" md-theme="main" class="md-primary">
+    <div class="md-toolbar-tools">
+        <a class="md-title" [routerLink]="['/']">
+            <span>MULTI</span><span>CHARTS</span>
+            <span>MC行情逾期查詢系統</span>
+        </a>
+        <div flex></div>
+        <span [hidden]="!loggedIn"><button md-button (click)="logout()">登出</button></span>
+        <span><button md-raised-button (click)="toggleDisplay()">Toggle</button></span>
+    </div>
+</md-toolbar>
+
+<!-- Admin Header -->
+<!--<md-toolbar ng-cloak id="headerBar" class="toolbar" md-theme="main" class="md-primary">
+    <div class="md-toolbar-tools">
+        <a class="md-title" href="/adminPage/main">
+            <span>MULTI</span><span>CHARTS</span>
+            <span>MC行情逾期查詢系統後臺</span>
+        </a>
+        <div flex></div>
+        <button md-button hide [routerLink]="['/adminPage/', 'main']">競賽管理後臺</button>
+        <button md-button [routerLink]="['/indexList']" *ngIf="identity.adminType === ('SYSTEM' || 'MAIN')">功能列表</button>
+        <button md-button (click)="logout()">登出</button>
+    </div>
+</md-toolbar>-->

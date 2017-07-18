@@ -1,0 +1,8 @@
+<div>
+    <ul class="tabs_area blueT" layout="row" layout-align="end">
+        <a [routerLink]="['/AdminPage/QueryExpiryDate']" class="tab" ui-sref-active="tab_active">查詢客戶-期間到期名單</a>
+        <a [routerLink]="['/AdminPage/LogSend']" class="tab" ui-sref-active="tab_active">查詢寄送信件、簡訊報表</a>
+    </ul>
+</div>
+<app-a-slide-nav></app-a-slide-nav>
+<router-outlet></router-outlet>

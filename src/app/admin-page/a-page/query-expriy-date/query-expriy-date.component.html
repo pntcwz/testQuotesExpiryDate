@@ -1,0 +1,64 @@
+<!-- 競賽成績 -->
+<div flex layout="column" layout-padding>
+    <div flex="auto" class="md-table-toolbar md-primary md-hue-1" md-theme="main">
+        <div>逾期時間</div>
+    </div>
+
+    <div layout="row" layout-wrap>
+        <div ng-model="startdate" md-placeholder="開始日期" required md-open-on-focus></div>
+        <div flex="5" style="text-align: right;">至</div>
+        <div ng-model="enddate" md-placeholder="結束日期" md-min-date="startdate" required md-open-on-focus></div>
+        <div class="md-raised md-primary" (click)="getQuotesExpiryDate()">查詢</div>
+        <div class="md-raised md-primary" ng-disabled="false" (click)="exportData()">匯出Excel</div>
+    </div>
+
+    <div flex="auto">
+        <table md-table class="dialog_table_container">
+            <thead md-head md-order="query.order">
+                <tr md-row>
+                    <th md-column md-order-by="User_Type">會員類別</th>
+
+                    <th md-column md-order-by="vtype">付費會員</th>
+
+                    <th md-column md-order-by="User_ID">身份證字號</th>
+                    <th md-column>客戶姓名</th>
+                    <th md-column md-order-by="Cube_ID">資傳帳號</th>
+                    <th md-column>資傳開始日</th>
+                    <th md-column md-order-by="End_Date">資傳到期日</th>
+
+                    <th md-column>預約展期別</th>
+                    <th md-column>預約單展期起始日</th>
+                    <th md-column>預約單展期到到期日</th>
+
+                    <th md-column>電話</th>
+                    <th md-column>手機</th>
+                    <th md-column>Email</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+                <tr md-row *ngFor="let item of list">
+
+                    <td md-cell>{{item.User_Type}}</td>
+                     <td md-cell>{{item.vtype}}</td>
+
+                    <td md-cell>{{item.User_ID}}</td>
+                    <td md-cell>{{item.Name}}</td>
+                    <td md-cell>{{item.Cube_ID}}</td>
+                    <td md-cell style="white-space: nowrap">{{item.Start_Date}}</td>
+                    <td md-cell style="white-space: nowrap">{{item.End_Date}}</td>
+
+                    <td md-cell style="white-space: nowrap">{{item.CubeType}}</td>
+                    <td md-cell style="white-space: nowrap">{{item.SDate}}</td>
+                    <td md-cell style="white-space: nowrap">{{item.EDate}}</td>
+
+                    <td md-cell>{{item.Home_Number}}</td>
+                    <td md-cell>{{item.Cellphone}}</td>
+                    <td md-cell>{{item.Email}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div md-limit="query.limit" md-limit-options="limitOptions" md-page="query.page"  md-page-select="options.pageSelect"
+        md-boundary-links="options.boundaryLinks">
+    </div>
+</div>
