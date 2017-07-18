@@ -20,7 +20,6 @@ export class QueryExpriyDateComponent implements OnInit {
 
   ngOnInit() {
     console.log(moment().toDate());
-    console.log('test');
     this.getQuotesExpiryDate();
   }
 
